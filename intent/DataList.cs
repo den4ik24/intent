@@ -1,73 +1,65 @@
-﻿using Android.App;
+﻿using System.IO;
+
+using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
-using Android.Content;
-using SQLite;
-using System.IO;
 
 namespace intent
 {
-    [Activity(Label = "привет Друг")]
-    public class NewActivity : AppCompatActivity
+    [Activity(Label = "База Друзей")]
+    public class DataList : AppCompatActivity
     {
         string dbPath = Path.Combine(System.Environment.GetFolderPath
            (System.Environment.SpecialFolder.Personal), "dataBase.db3");
 
-        TextView name;
         V7Toolbar my_toolbar;
+        ListView infoBase;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.NewActivity);
+            SetContentView(Resource.Layout.DataList);
 
-            name = FindViewById<TextView>(Resource.Id.name);
             my_toolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
             SetSupportActionBar(my_toolbar);
 
+            infoBase = FindViewById<ListView>(Resource.Id.infoBase);
+
             var intent = Intent;
             string result = intent.GetStringExtra("InOut");
-            name.Text = "HELLO " + result;
 
-            Res();
+            var db = new SQLite.SQLiteConnection(dbPath);
+            var table = db.Table<DataBase>();
+
+            ArrayAdapter<DataBase> adapter = new ArrayAdapter<DataBase>(this, Android.Resource.Layout.SimpleListItem1, table.ToList());
+            infoBase.Adapter = adapter;
+
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
+
             MenuInflater.Inflate(Resource.Menu.menu, menu);
             return true;
+
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
             {
+
+
                 case Android.Resource.Id.Home:
                     Finish();
-                    return true;
-
-                case Resource.Id.toBD:
-                    var intent = new Intent(this, typeof(DataList));
-                    intent.PutExtra("InOut", name.Text);
-                    StartActivity(intent);
                     return true;
 
                 default:
                     return base.OnOptionsItemSelected(item);
             }
-        }
-
-        public void Res()
-        {
-            var db = new SQLiteConnection(dbPath);
-            db.CreateTable<DataBase>();
-            DataBase dataBase = new DataBase(name.Text);
-            db.Insert(dataBase);
-            var table = db.Table<DataBase>();
-
         }
     }
 }

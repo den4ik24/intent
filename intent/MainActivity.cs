@@ -3,25 +3,32 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
 using Android.Content;
+using Android.Views;
+using V7Toolbar = Android.Support.V7.Widget.Toolbar;
+using System.IO;
 
 namespace intent
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        EditText editText;
+        EditText text;
         Button button1;
+        V7Toolbar my_toolbar;
 
-                     
+        string dbPath = Path.Combine(System.Environment.GetFolderPath
+           (System.Environment.SpecialFolder.Personal), "dataBase.db3");
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            editText = FindViewById<EditText>(Resource.Id.editText);
+            text = FindViewById<EditText>(Resource.Id.editText);
             button1 = FindViewById<Button>(Resource.Id.button1);
+            my_toolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
+            SetSupportActionBar(my_toolbar);
 
-            
 
             button1.Click += Button1_Click;
         }
@@ -29,8 +36,37 @@ namespace intent
         private void Button1_Click(object sender, System.EventArgs e)
         {
             var intent = new Intent(this, typeof(NewActivity));
-            intent.PutExtra("InOut", editText.Text);
+            intent.PutExtra("InOut", text.Text);
             StartActivity(intent);
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu, menu);
+            return true;
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.toBD:
+                    var intent = new Intent(this, typeof(DataList));
+                    intent.PutExtra("InOut", text.Text);
+                    StartActivity(intent);
+                    return true;
+
+                //case Resource.Id.toNewItem:
+                //    var intent = new Intent(this, typeof(MainActivity));
+                //    break;
+
+                //case Resource.Id.toHelloItem:
+                //    var intent = new Intent(this, typeof(NewActivity));
+                //    break;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
         }
     }
 }

@@ -56,6 +56,8 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBase.cs" />
+    <Compile Include="DataList.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="NewActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -93,10 +95,21 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.5.231</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\NewActivity.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Menu\menu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\DataList.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

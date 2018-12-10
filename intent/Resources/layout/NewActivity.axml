@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+	>
+	<android.support.v7.widget.Toolbar
+        local:navigationIcon="?homeAsUpIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:elevation="4dp"
+        android:background="?android:attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:id="@+id/my_toolbar" />
 	<TextView
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:minWidth="50px"
 		android:minHeight="50px"
-		android:id="@+id/text"
+		android:id="@+id/name"
 		android:textSize="40dp"
-		android:textAlignment="center"
+		android:textAlignment="viewStart"
 		android:textColor="#ff4a148c"
-		android:textStyle="bold"
-		android:text="HELLO :" />
+		android:textStyle="italic|bold"
+		android:text="HELLO :"
+		android:freezesText="true" />
 
 </LinearLayout>
