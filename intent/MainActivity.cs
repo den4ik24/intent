@@ -9,7 +9,7 @@ using System.IO;
 
 namespace intent
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "Ввод данных", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
         EditText text;
@@ -52,17 +52,9 @@ namespace intent
             {
                 case Resource.Id.toBD:
                     var intent = new Intent(this, typeof(DataList));
-                    intent.PutExtra("InOut", text.Text);
                     StartActivity(intent);
                     return true;
 
-                //case Resource.Id.toNewItem:
-                //    var intent = new Intent(this, typeof(MainActivity));
-                //    break;
-
-                //case Resource.Id.toHelloItem:
-                //    var intent = new Intent(this, typeof(NewActivity));
-                //    break;
 
                 default:
                     return base.OnOptionsItemSelected(item);

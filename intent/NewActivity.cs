@@ -30,7 +30,7 @@ namespace intent
 
             var intent = Intent;
             string result = intent.GetStringExtra("InOut");
-            name.Text = "HELLO " + result;
+            name.Text = result;
 
             Res();
         }
@@ -51,9 +51,14 @@ namespace intent
 
                 case Resource.Id.toBD:
                     var intent = new Intent(this, typeof(DataList));
-                    intent.PutExtra("InOut", name.Text);
                     StartActivity(intent);
                     return true;
+
+                case Resource.Id.toNewItem:
+                    intent = new Intent(this, typeof(MainActivity));
+                    StartActivity(intent);
+                    return true;
+
 
                 default:
                     return base.OnOptionsItemSelected(item);

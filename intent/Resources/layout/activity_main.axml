@@ -22,15 +22,16 @@
 		android:text="введите ваш ID"
 		android:freezesText="true"
 		android:layout_below="@id/my_toolbar" 
-		 />
+	/>
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/editText"
 		android:freezesText="true"
-		android:layout_below="@id/textView1" 
-		
-		 />
+		android:layout_below="@id/textView1"
+		android:textColor="#ff004d40"
+		android:textColorHint="#ff0d47a1"
+	/>
 
 	<Button
 		android:text="отправить"
@@ -39,7 +40,7 @@
 		android:id="@+id/button1"
 		android:layout_centerInParent="true"
 		android:freezesText="true" 
-		/>
+	/>
 	
 	
 	

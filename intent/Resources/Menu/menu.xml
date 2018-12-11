@@ -5,10 +5,10 @@
   <item android:id="@+id/toBD"
         android:title="@string/action_settings"/>
   
-<!--<item android:id="@+id/toNewItem"
+<item android:id="@+id/toNewItem"
         android:title="@string/action_NewItem"/>
 
-<item android:id="@+id/toHelloItem"
+<!--<item android:id="@+id/toHelloItem"
         android:title="@string/action_HelloItem"/>-->
 
  </menu>

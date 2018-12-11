@@ -1,6 +1,7 @@
 ﻿using System.IO;
 
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
@@ -12,6 +13,7 @@ namespace intent
     [Activity(Label = "База Друзей")]
     public class DataList : AppCompatActivity
     {
+        
         string dbPath = Path.Combine(System.Environment.GetFolderPath
            (System.Environment.SpecialFolder.Personal), "dataBase.db3");
 
@@ -27,6 +29,7 @@ namespace intent
             SetSupportActionBar(my_toolbar);
 
             infoBase = FindViewById<ListView>(Resource.Id.infoBase);
+            //infoBase.ItemClick += InfoBase_ItemClick;
 
             var intent = Intent;
             string result = intent.GetStringExtra("InOut");
@@ -38,6 +41,13 @@ namespace intent
             infoBase.Adapter = adapter;
 
         }
+
+        //private void InfoBase_ItemClick(object sender, System.EventArgs e)
+        //{
+        //    var intent = new Intent(this, typeof(NewActivity));
+        //    intent.PutExtra("InOut",   );
+        //    StartActivity(intent); 
+        //}
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -56,6 +66,14 @@ namespace intent
                 case Android.Resource.Id.Home:
                     Finish();
                     return true;
+
+   
+                case Resource.Id.toNewItem:
+                    var intent = new Intent(this, typeof(MainActivity));
+                    StartActivity(intent);
+                    return true;
+
+
 
                 default:
                     return base.OnOptionsItemSelected(item);
