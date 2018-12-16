@@ -67,7 +67,7 @@ namespace intent
                     Finish();
                     return true;
 
-   
+
                 case Resource.Id.toNewItem:
                     var intent = new Intent(this, typeof(MainActivity));
                     StartActivity(intent);
