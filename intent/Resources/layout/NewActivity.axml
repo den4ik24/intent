@@ -12,17 +12,24 @@
         android:elevation="4dp"
         android:background="?android:attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:id="@+id/my_toolbar" />
-	
+        android:id="@+id/my_toolbar" 
+		>
+		<ImageView
+			android:id="@+id/imageView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/flowers"
+		/>
+	</android.support.v7.widget.Toolbar>
 	<TableRow
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:id="@+id/tableRow1" >
+		android:layout_height="wrap_content"
+		android:id="@+id/tableRow1">
 		<TextView
-			android:text="Привет (hello) "
-			android:layout_height="match_parent"
+			android:text="Приветcтвуем пользователя  "
+			android:layout_height="wrap_content"
 			android:id="@+id/textView1"
 			android:textColor="#ff6a1b9a"
 			android:textSize="25dp"
@@ -36,14 +43,18 @@
 			android:minHeight="50px"
 			android:id="@+id/name"
 			android:textSize="25dp"
-			android:textAlignment="textStart"
+			android:textAlignment="center"
 			android:textColor="#ff311b92"
 			android:textStyle="italic|bold"
 			android:freezesText="true"
 			android:layout_width="0dp"
 			android:layout_weight="2"/>
-	   
-		
 	</TableRow>
+	<ImageView
+		android:src="@drawable/got"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:id="@+id/imageView1" />
 
 </LinearLayout>

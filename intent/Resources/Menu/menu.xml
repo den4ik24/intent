@@ -5,13 +5,15 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context=".MainActivity">
   <item android:id="@+id/toBD"
+        android:orderInCategory="10"
         android:title="@string/action_settings"
         android:icon="@drawable/twotone_book_black_24"
         app:showAsAction="ifRoom"
         />
   
 <item android:id="@+id/toNewItem"
-        android:title="@string/action_NewItem"
+      android:orderInCategory="5"
+      android:title="@string/action_NewItem"
       app:showAsAction="ifRoom"
       android:icon="@drawable/twotone_build_black_24"
       

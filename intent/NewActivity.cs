@@ -7,6 +7,7 @@ using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Content;
 using SQLite;
 using System.IO;
+using System.Linq;
 
 namespace intent
 {
@@ -31,7 +32,6 @@ namespace intent
             var intent = Intent;
             string result = intent.GetStringExtra("InOut");
             name.Text = result;
-
             Res();
         }
 

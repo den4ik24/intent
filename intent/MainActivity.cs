@@ -6,6 +6,7 @@ using Android.Content;
 using Android.Views;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using System.IO;
+using System.Linq;
 
 namespace intent
 {
@@ -35,6 +36,7 @@ namespace intent
 
         private void Button1_Click(object sender, System.EventArgs e)
         {
+          
             var intent = new Intent(this, typeof(NewActivity));
             intent.PutExtra("InOut", text.Text);
             StartActivity(intent);
@@ -51,7 +53,14 @@ namespace intent
             switch (item.ItemId)
             {
                 case Resource.Id.toBD:
+                    Toast.MakeText(this, "Вас отправлено в базу данных", ToastLength.Long).Show();
                     var intent = new Intent(this, typeof(DataList));
+                    StartActivity(intent);
+                    return true;
+
+                case Resource.Id.toNewItem:
+                    Toast.MakeText(this, "Вы находитесь в начале вашего пути", ToastLength.Short).Show();
+                    intent = new Intent(this, typeof(MainActivity));
                     StartActivity(intent);
                     return true;
 
