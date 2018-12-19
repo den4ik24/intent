@@ -36,19 +36,19 @@
 			android:textStyle="italic|bold"
 			android:layout_width="0dp"
 			android:layout_weight="1"
-			android:textAlignment="textEnd" />
+			android:textAlignment="textStart" />
 		<TextView
 			android:layout_height="match_parent"
 			android:minWidth="50px"
 			android:minHeight="50px"
 			android:id="@+id/name"
 			android:textSize="25dp"
-			android:textAlignment="center"
+			android:textAlignment="textStart"
 			android:textColor="#ff311b92"
 			android:textStyle="italic|bold"
 			android:freezesText="true"
 			android:layout_width="0dp"
-			android:layout_weight="2"/>
+			android:layout_weight="1"/>
 	</TableRow>
 	<ImageView
 		android:src="@drawable/got"

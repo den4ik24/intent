@@ -6,7 +6,8 @@ using Android.Content;
 using Android.Views;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using System.IO;
-using System.Linq;
+using SQLite;
+using System;
 
 namespace intent
 {
@@ -34,12 +35,17 @@ namespace intent
             button1.Click += Button1_Click;
         }
 
-        private void Button1_Click(object sender, System.EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-          
+
+         
+
             var intent = new Intent(this, typeof(NewActivity));
             intent.PutExtra("InOut", text.Text);
+
             StartActivity(intent);
+
+            Res();
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -68,6 +74,18 @@ namespace intent
                 default:
                     return base.OnOptionsItemSelected(item);
             }
+
+            
+        }
+
+        public void Res()
+        {
+            var db = new SQLiteConnection(dbPath);
+            db.CreateTable<DataBase>();
+            DataBase dataBase = new DataBase(text.Text);
+            db.Insert(dataBase);
+            var table = db.Table<DataBase>();
+
         }
     }
 }

@@ -5,9 +5,8 @@ using Android.Views;
 using Android.Widget;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Content;
-using SQLite;
 using System.IO;
-using System.Linq;
+using System;
 
 namespace intent
 {
@@ -22,17 +21,30 @@ namespace intent
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.NewActivity);
+            try
+            {
 
-            name = FindViewById<TextView>(Resource.Id.name);
-            my_toolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
-            SetSupportActionBar(my_toolbar);
 
-            var intent = Intent;
-            string result = intent.GetStringExtra("InOut");
-            name.Text = result;
-            Res();
+                base.OnCreate(savedInstanceState);
+                SetContentView(Resource.Layout.NewActivity);
+
+                name = FindViewById<TextView>(Resource.Id.name);
+                my_toolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
+                SetSupportActionBar(my_toolbar);
+
+
+                var intent = Intent;
+                string result = intent.GetStringExtra("InOut");
+                char[] sReverse = result.ToCharArray();
+                Array.Reverse(sReverse);
+                result = new string(sReverse);
+                name.Text = result;
+            }
+
+            catch (Exception)
+            {
+
+            }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -65,14 +77,6 @@ namespace intent
             }
         }
 
-        public void Res()
-        {
-            var db = new SQLiteConnection(dbPath);
-            db.CreateTable<DataBase>();
-            DataBase dataBase = new DataBase(name.Text);
-            db.Insert(dataBase);
-            var table = db.Table<DataBase>();
-
-        }
+        
     }
 }

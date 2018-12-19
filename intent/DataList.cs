@@ -19,6 +19,7 @@ namespace intent
 
         V7Toolbar my_toolbar;
         ListView infoBase;
+        //string result;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,25 +30,26 @@ namespace intent
             SetSupportActionBar(my_toolbar);
 
             infoBase = FindViewById<ListView>(Resource.Id.infoBase);
-            //infoBase.ItemClick += InfoBase_ItemClick;
+            infoBase.ItemClick += InfoBase_ItemClick;
 
-            var intent = Intent;
-            string result = intent.GetStringExtra("InOut");
+            //var intent = Intent; 
+            //result = intent.GetStringExtra("InOut");
 
             var db = new SQLite.SQLiteConnection(dbPath);
             var table = db.Table<DataBase>();
 
             ArrayAdapter<DataBase> adapter = new ArrayAdapter<DataBase>(this, Android.Resource.Layout.SimpleListItem1, table.ToList());
             infoBase.Adapter = adapter;
+            
 
         }
 
-        //private void InfoBase_ItemClick(object sender, System.EventArgs e)
-        //{
-        //    var intent = new Intent(this, typeof(NewActivity));
-        //    intent.PutExtra("InOut",   );
-        //    StartActivity(intent); 
-        //}
+        private void InfoBase_ItemClick(object sender, System.EventArgs e)
+        {
+            var intent = new Intent(this, typeof(NewActivity));
+            intent.PutExtra("InOut", infoBase.SelectedItemPosition );
+            StartActivity(intent);
+        }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
