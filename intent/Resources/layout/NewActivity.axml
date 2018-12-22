@@ -28,27 +28,27 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/tableRow1">
 		<TextView
-			android:text="Приветcтвуем пользователя  "
+			android:text="Да будет славиться имя твое во веки веков"
 			android:layout_height="wrap_content"
 			android:id="@+id/textView1"
 			android:textColor="#ff6a1b9a"
 			android:textSize="25dp"
 			android:textStyle="italic|bold"
 			android:layout_width="0dp"
-			android:layout_weight="1"
-			android:textAlignment="textStart" />
+			android:layout_weight="3"
+			android:textAlignment="textEnd" />
 		<TextView
 			android:layout_height="match_parent"
 			android:minWidth="50px"
 			android:minHeight="50px"
 			android:id="@+id/name"
 			android:textSize="25dp"
-			android:textAlignment="textStart"
+			android:textAlignment="center"
 			android:textColor="#ff311b92"
 			android:textStyle="italic|bold"
 			android:freezesText="true"
 			android:layout_width="0dp"
-			android:layout_weight="1"/>
+			android:layout_weight="2"/>
 	</TableRow>
 	<ImageView
 		android:src="@drawable/got"
