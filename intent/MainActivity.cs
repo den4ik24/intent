@@ -31,7 +31,7 @@ namespace intent
             my_toolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
             SetSupportActionBar(my_toolbar);
 
-
+            //text.Text = "";
             button1.Click += Button1_Click;
         }
 
@@ -44,8 +44,10 @@ namespace intent
             intent.PutExtra("InOut", text.Text);
 
             StartActivity(intent);
-
+            
             Res();
+
+            text.Text = "";
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -61,6 +63,12 @@ namespace intent
                 case Resource.Id.toBD:
                     Toast.MakeText(this, "Вас отправлено в базу данных", ToastLength.Long).Show();
                     var intent = new Intent(this, typeof(DataList));
+                    StartActivity(intent);
+                    return true;
+
+                case Resource.Id.toHelloItem:
+                    Toast.MakeText(this, "Вас переместили в экран приветствия", ToastLength.Long).Show();
+                    intent = new Intent(this, typeof(NewActivity));
                     StartActivity(intent);
                     return true;
 

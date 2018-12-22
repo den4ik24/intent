@@ -70,15 +70,21 @@ namespace intent
                     return true;
 
 
-                case Resource.Id.toNewItem:
-                    Toast.MakeText(this, "Вас отправили на начальный экран", ToastLength.Long).Show();
-                    var intent = new Intent(this, typeof(MainActivity));
+                case Resource.Id.toBD:
+                    Toast.MakeText(this, "Вы находитесь в базе данных", ToastLength.Short).Show();
+                    var intent = new Intent(this, typeof(DataList));
                     StartActivity(intent);
                     return true;
 
-                case Resource.Id.toBD:
-                    Toast.MakeText(this, "Вы находитесь в базе данных", ToastLength.Short).Show();
-                    intent = new Intent(this, typeof(DataList));
+                case Resource.Id.toHelloItem:
+                    Toast.MakeText(this, "Вас переместили в экран приветствия", ToastLength.Long).Show();
+                    intent = new Intent(this, typeof(NewActivity));
+                    StartActivity(intent);
+                    return true;
+
+                case Resource.Id.toNewItem:
+                    Toast.MakeText(this, "Вас отправили на начальный экран", ToastLength.Long).Show();
+                    intent = new Intent(this, typeof(MainActivity));
                     StartActivity(intent);
                     return true;
 

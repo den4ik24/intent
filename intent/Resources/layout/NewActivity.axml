@@ -51,10 +51,10 @@
 			android:layout_weight="2"/>
 	</TableRow>
 	<ImageView
-		android:src="@drawable/got"
+		android:src="@drawable/smile"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
+		
 		android:id="@+id/imageView1" />
 
 </LinearLayout>

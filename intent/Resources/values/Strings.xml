@@ -2,5 +2,5 @@
     <string name="app_name">intent</string>
     <string name="action_settings">В базу данных</string>
   <string name="action_NewItem">Начальный экран</string>
-  <!--<string name="action_HelloItem">Экран приветствия</string>-->
+  <string name="action_HelloItem">Экран приветствия</string>
 </resources>

@@ -2227,26 +2227,26 @@ namespace intent
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f02006f
-			public const int avd_hide_password_1 = 2130837615;
-			
 			// aapt resource value: 0x7f020070
-			public const int avd_hide_password_2 = 2130837616;
+			public const int avd_hide_password_1 = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int avd_hide_password_3 = 2130837617;
+			public const int avd_hide_password_2 = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int avd_hide_password_3 = 2130837618;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f020072
-			public const int avd_show_password_1 = 2130837618;
-			
 			// aapt resource value: 0x7f020073
-			public const int avd_show_password_2 = 2130837619;
+			public const int avd_show_password_1 = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int avd_show_password_3 = 2130837620;
+			public const int avd_show_password_2 = 2130837620;
+			
+			// aapt resource value: 0x7f020075
+			public const int avd_show_password_3 = 2130837621;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -2267,10 +2267,10 @@ namespace intent
 			public const int design_snackbar_background = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int flowers = 2130837595;
+			public const int face = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int got = 2130837596;
+			public const int flowers = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
 			public const int navigation_empty_icon = 2130837597;
@@ -2299,11 +2299,11 @@ namespace intent
 			// aapt resource value: 0x7f020065
 			public const int notification_icon_background = 2130837605;
 			
-			// aapt resource value: 0x7f02006d
-			public const int notification_template_icon_bg = 2130837613;
-			
 			// aapt resource value: 0x7f02006e
-			public const int notification_template_icon_low_bg = 2130837614;
+			public const int notification_template_icon_bg = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int notification_template_icon_low_bg = 2130837615;
 			
 			// aapt resource value: 0x7f020066
 			public const int notification_tile_bg = 2130837606;
@@ -2312,19 +2312,22 @@ namespace intent
 			public const int notify_panel_notification_icon_bg = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int sonic = 2130837608;
+			public const int smile = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int tooltip_frame_dark = 2130837609;
+			public const int sonic = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int tooltip_frame_light = 2130837610;
+			public const int tooltip_frame_dark = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int twotone_book_black_24 = 2130837611;
+			public const int tooltip_frame_light = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int twotone_build_black_24 = 2130837612;
+			public const int twotone_book_black_24 = 2130837612;
+			
+			// aapt resource value: 0x7f02006d
+			public const int twotone_build_black_24 = 2130837613;
 			
 			static Drawable()
 			{
@@ -2849,6 +2852,9 @@ namespace intent
 			// aapt resource value: 0x7f0800b8
 			public const int toBD = 2131230904;
 			
+			// aapt resource value: 0x7f0800ba
+			public const int toHelloItem = 2131230906;
+			
 			// aapt resource value: 0x7f0800b9
 			public const int toNewItem = 2131230905;
 			
@@ -3279,6 +3285,9 @@ namespace intent
 			
 			// aapt resource value: 0x7f090010
 			public const int abc_toolbar_collapse_description = 2131296272;
+			
+			// aapt resource value: 0x7f09002a
+			public const int action_HelloItem = 2131296298;
 			
 			// aapt resource value: 0x7f090029
 			public const int action_NewItem = 2131296297;
