@@ -3,24 +3,14 @@
 	xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-	>
+    android:layout_height="match_parent">
 	<android.support.v7.widget.Toolbar
-        local:navigationIcon="?homeAsUpIndicator"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:elevation="4dp"
         android:background="?android:attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:id="@+id/my_toolbar" 
-		>
-		<ImageView
-			android:id="@+id/imageView"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:src="@drawable/flowers"
-		/>
-	</android.support.v7.widget.Toolbar>
+        android:id="@+id/my_toolbar"/>
 	<TableRow
 		android:minWidth="25px"
 		android:minHeight="25px"
@@ -36,7 +26,7 @@
 			android:textStyle="italic|bold"
 			android:layout_width="0dp"
 			android:layout_weight="3"
-			android:textAlignment="textEnd" />
+			android:textAlignment="textEnd"/>
 		<TextView
 			android:layout_height="match_parent"
 			android:minWidth="50px"
@@ -54,7 +44,5 @@
 		android:src="@drawable/smile"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		
-		android:id="@+id/imageView1" />
-
+		android:id="@+id/imageView1"/>
 </LinearLayout>

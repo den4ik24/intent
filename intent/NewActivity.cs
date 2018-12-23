@@ -10,7 +10,7 @@ using System;
 
 namespace intent
 {
-    [Activity(Label = "привет, друг")]
+    [Activity(Label = "Привет, друг")]
     public class NewActivity : AppCompatActivity
     {
         string dbPath = Path.Combine(System.Environment.GetFolderPath
