@@ -47,7 +47,7 @@ namespace intent
         private void InfoBase_ItemClick(object sender, System.EventArgs e)
         {
             var intent = new Intent(this, typeof(NewActivity));
-            intent.PutExtra("InOut", infoBase.SelectedItemPosition );
+            intent.PutExtra("InOut", infoBase.ToString() );
             StartActivity(intent);
         }
 
