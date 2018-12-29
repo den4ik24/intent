@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 using Android.App;
 using Android.Content;
@@ -32,6 +33,7 @@ namespace intent
             infoBase = FindViewById<ListView>(Resource.Id.infoBase);
             infoBase.ItemClick += InfoBase_ItemClick;
 
+
             //var intent = Intent; 
             //result = intent.GetStringExtra("InOut");
 
@@ -44,10 +46,10 @@ namespace intent
 
         }
 
-        private void InfoBase_ItemClick(object sender, System.EventArgs e)
+        private void InfoBase_ItemClick(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(NewActivity));
-            intent.PutExtra("InOut", infoBase.ToString() );
+            intent.PutExtra("InOut", infoBase.GetItemAtPosition().ToString());
             StartActivity(intent);
         }
 
