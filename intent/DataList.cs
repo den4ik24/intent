@@ -7,6 +7,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using static Android.Widget.AdapterView;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace intent
@@ -46,10 +47,10 @@ namespace intent
 
         }
 
-        private void InfoBase_ItemClick(object sender, EventArgs e)
+        private void InfoBase_ItemClick(object sender, ItemClickEventArgs e)
         {
             var intent = new Intent(this, typeof(NewActivity));
-            intent.PutExtra("InOut", infoBase.GetItemAtPosition().ToString());
+            intent.PutExtra("InOut", infoBase.GetItemAtPosition(e.Position).ToString());
             StartActivity(intent);
         }
 

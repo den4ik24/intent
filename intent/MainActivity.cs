@@ -31,7 +31,6 @@ namespace intent
             my_toolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
             SetSupportActionBar(my_toolbar);
 
-            //text.Text = "";
             button1.Click += Button1_Click;
         }
 
